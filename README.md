@@ -25,11 +25,11 @@ for details). Subfolders images are loaded in batches (parameter n).
 
 ![screenshot](https://i.ibb.co/b2mjZgw/Annotazione-2020-02-20-123702.png)
 
-You want to select only good (it's up yo you define "good") images from subfolders (12, 13, 14 ..). In my case main folder is a date, 
+You want to select only good (it's up yo you define "good", in this case is the cat) images from subfolders (12, 13, 14 ..). In my case main folder is a date, 
 subfolders are unique IDs. In each subfolder there are many images with timestamp as name. In this way you can filter images by timestamp.
 In the first column the subfolder name is loaded in the textbox. You can change it (for example if you want join different subfolders). Using the checkbox
 you can flag that subfolder.
-By default every image is selected:
+By default every image is selected (not greyed):
 * Left click: deselect (greyed out)
 * Right click: deselect the entire row
 * Central click: open the image with the OS image viewer.
