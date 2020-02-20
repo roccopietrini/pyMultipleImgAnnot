@@ -97,7 +97,7 @@ class MainWindow():
 
     def _on_mousewheelWin(self, event):
         if platform.system() == "Darwin":
-            self.canvas.yview_scroll(-1 * event.delta)
+            self.canvas.yview_scroll(-1 * event.delta, "units")
         else:
             self.canvas.yview_scroll(int(-1 * (event.delta / 120)), "units")
 
