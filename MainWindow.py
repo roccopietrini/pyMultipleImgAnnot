@@ -3,6 +3,7 @@ from PIL import Image, ImageTk, ImageEnhance
 from datetime import datetime
 import os
 import sys
+import platform
 
 class MainWindow():
 
@@ -65,8 +66,14 @@ class MainWindow():
                 myvar.image = tkimage
                 myvar.grid(row=i, column=j+2)
                 myvar.bind("<Button-1>", lambda e, i=i, j=j: self.onClick(i, j))
-                myvar.bind("<Button-3>", lambda e, i=i, j=j: self.onRightClick(i, j))
-                myvar.bind("<Button-2>", lambda e, i=i, j=j: self.on_centralClick(i, j))
+                if platform.system() == "Darwin":
+                    right_button = "<Button-2>"
+                    wheel = "<Button-3>"
+                else:
+                    right_button = "<Button-3>"
+                    wheel = "<Button-2>"
+                myvar.bind(right_button, lambda e, i=i, j=j: self.onRightClick(i, j))
+                myvar.bind(wheel, lambda e, i=i, j=j: self.on_centralClick(i, j))
             print("Scanning folder", elem)
 
         self.canvas.create_window((0, 0), window=self.frame_image, anchor=tk.NW)
@@ -89,7 +96,10 @@ class MainWindow():
             self.canvas.yview('scroll', 1, 'units')
 
     def _on_mousewheelWin(self, event):
-        self.canvas.yview_scroll(int(-1 * (event.delta / 120)), "units")
+        if platform.system() == "Darwin":
+            self.canvas.yview_scroll(-1 * event.delta)
+        else:
+            self.canvas.yview_scroll(int(-1 * (event.delta / 120)), "units")
 
     def onClick(self, i, j):
         selected_img = Image.open(os.path.join(self.image_path, self.image_folders[i], self.images[i][j]))

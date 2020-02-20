@@ -1,7 +1,7 @@
 # pyMultipleImgAnnot
 Multiple images binary annotator. 
 
-Annotation binary tool for quicly annotate good/bad images. Tested in Ubuntu 16.04 and Windows 10.
+Annotation binary tool for quicly annotate good/bad images. Tested in Ubuntu, Windows and MacOS.
 Suppose you have the following folder structure:
 
 
