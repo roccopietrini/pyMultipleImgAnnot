@@ -104,7 +104,7 @@ class MainWindow():
     def onClick(self, i, j):
         selected_img = Image.open(os.path.join(self.image_path, self.image_folders[i], self.images[i][j]))
         width, height = selected_img.size
-        cropsize = min(width, height)
+        cropsize = 20
         left = (width - cropsize) / 2
         top = (height - cropsize) / 2
         right = (width + cropsize) / 2
