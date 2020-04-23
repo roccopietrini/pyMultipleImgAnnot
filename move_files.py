@@ -51,7 +51,7 @@ def main():
         files_archive.append(os.path.join(args.destination, result_f.split('.')[0][7:] + '_clean'))
 
     print('All files moved, now archiving')
-    subprocess.call(['7z', 'a', 'C:\\Users\\pavilion\\Desktop\\february.7z', '-v1900m'] + files_archive)
+    subprocess.call(['7z', 'a', 'archive.7z', '-v1900m'] + files_archive)
 
 
 if __name__ == '__main__':
